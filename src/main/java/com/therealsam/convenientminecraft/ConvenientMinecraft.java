@@ -1,5 +1,6 @@
 package com.therealsam.convenientminecraft;
 
+import com.therealsam.convenientminecraft.util.ModLootTableModifiers;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -11,6 +12,6 @@ public class ConvenientMinecraft implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-
+        ModLootTableModifiers.modifyLootTables();
 	}
 }
