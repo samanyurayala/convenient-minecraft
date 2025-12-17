@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "convenientminecraft",
+	"version": "${version}",
+	"name": "Convenient Minecraft",
+	"description": "Minecraft but it's convenient",
+	"authors": [
+		"TheRealSam"
+	],
+	"contact": {
+		"homepage": "https://therealsam.com/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/convenientminecraft/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.therealsam.convenientminecraft.ConvenientMinecraft"
+		],
+		"fabric-datagen": [
+			"com.therealsam.convenientminecraft.ConvenientMinecraftDataGenerator"
+		],
+        "client": [
+            "com.therealsam.convenientminecraft.ConvenientMinecraftClient"
+        ]
+	},
+	"mixins": [
+		"convenientminecraft.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.3",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
