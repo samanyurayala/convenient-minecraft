@@ -12,7 +12,6 @@ import net.minecraft.util.Identifier;
 
 public class ModLootTableModifiers {
     private static final Identifier HUSK_ID = Identifier.of("minecraft", "entities/husk");
-
     public static void modifyLootTables() {
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registry) -> {
             if (HUSK_ID.equals(key.getValue())) {
