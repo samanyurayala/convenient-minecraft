@@ -1,8 +1,11 @@
 package com.therealsam.convenientminecraft;
 
+import com.therealsam.convenientminecraft.item.ModItems;
+import com.therealsam.convenientminecraft.util.BlazingPickaxeUsageEvent;
 import com.therealsam.convenientminecraft.util.ModLootTableModifiers;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -18,8 +21,8 @@ public class ConvenientMinecraft implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+        ModItems.registerModItems();
+        PlayerBlockBreakEvents.BEFORE.register(new BlazingPickaxeUsageEvent());
         ModLootTableModifiers.modifyLootTables();
-        //ItemStack bucket = new ItemStack(Items.BUCKET);
-        //bucket.set(DataComponentTypes.MAX_STACK_SIZE, 64);
 	}
 }

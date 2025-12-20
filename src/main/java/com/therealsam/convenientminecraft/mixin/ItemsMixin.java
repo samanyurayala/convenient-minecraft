@@ -13,12 +13,9 @@ import java.util.Arrays;
 public class ItemsMixin {
     @Inject(method = "getMaxCount", at = @At("HEAD"), cancellable = true)
     private void customBucket(CallbackInfoReturnable<Integer> cir) {
-        Item[] stackableItems = {Items.RABBIT_STEW, Items.BEETROOT_SOUP, Items.MUSHROOM_STEW, Items.SUSPICIOUS_STEW, Items.MILK_BUCKET};
+        Item[] stackableItems = {Items.RABBIT_STEW, Items.BEETROOT_SOUP, Items.MUSHROOM_STEW, Items.SUSPICIOUS_STEW, Items.MILK_BUCKET, Items.ENCHANTED_BOOK};
         ItemStack stack = (ItemStack)(Object)this;
-        if (stack.getItem() instanceof BucketItem || stack.getItem() instanceof PotionItem || stack.getItem() instanceof SplashPotionItem || stack.getItem() instanceof LingeringPotionItem || stack.getItem() instanceof PowderSnowBucketItem) {
+        if (stack.getItem() instanceof BucketItem || stack.getItem() instanceof PotionItem || stack.getItem() instanceof SplashPotionItem || stack.getItem() instanceof LingeringPotionItem || stack.getItem() instanceof PowderSnowBucketItem || Arrays.asList(stackableItems).contains(stack.getItem()))
             cir.setReturnValue(64);
-        } else if (Arrays.asList(stackableItems).contains(stack.getItem())) {
-            cir.setReturnValue(64);
-        }
     }
 }
