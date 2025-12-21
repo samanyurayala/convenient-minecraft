@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "S": "minecraft:warped_planks"
+  },
+  "pattern": [
+    "S  ",
+    "SS ",
+    "   "
+  ],
+  "result": {
+    "count": 4,
+    "id": "minecraft:warped_stairs"
+  }
+}

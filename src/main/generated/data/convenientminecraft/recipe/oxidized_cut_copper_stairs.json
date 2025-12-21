@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "S": "minecraft:oxidized_copper"
+  },
+  "pattern": [
+    "S  ",
+    "SS ",
+    "   "
+  ],
+  "result": {
+    "count": 4,
+    "id": "minecraft:oxidized_cut_copper_stairs"
+  }
+}
