@@ -2,6 +2,7 @@ package com.therealsam.convenientminecraft;
 
 import com.therealsam.convenientminecraft.item.ModItems;
 import com.therealsam.convenientminecraft.util.BlazingPickaxeUsageEvent;
+import com.therealsam.convenientminecraft.util.GlassDropEvent;
 import com.therealsam.convenientminecraft.util.ModLootTableModifiers;
 import net.fabricmc.api.ModInitializer;
 
@@ -23,6 +24,7 @@ public class ConvenientMinecraft implements ModInitializer {
 	public void onInitialize() {
         ModItems.registerModItems();
         PlayerBlockBreakEvents.BEFORE.register(new BlazingPickaxeUsageEvent());
+        PlayerBlockBreakEvents.BEFORE.register(new GlassDropEvent());
         ModLootTableModifiers.modifyLootTables();
 	}
 }

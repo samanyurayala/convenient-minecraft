@@ -30,6 +30,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('S', Items.STICK)
                         .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
                         .offerTo(exporter, getRecipeName(ModItems.BLAZING_PICKAXE));
+                createShaped(RecipeCategory.COMBAT, Items.TRIDENT)
+                        .pattern("SSS")
+                        .pattern(" B ")
+                        .pattern(" B ")
+                        .input('S', Items.PRISMARINE_SHARD)
+                        .input('B', Items.BREEZE_ROD)
+                        .criterion(hasItem(Items.PRISMARINE_SHARD), conditionsFromItem(Items.PRISMARINE_SHARD))
+                        .offerTo(exporter);
             }
         };
     }

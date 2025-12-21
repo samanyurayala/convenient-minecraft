@@ -10,6 +10,7 @@ import net.minecraft.util.Identifier;
 public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> INCORRECT_FOR_BLAZING_TOOL = createTag("incorrect_for_blazing_tool");
+        public static final TagKey<Block> GLASSES = createTag("glasses");
 
         private static TagKey<Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(ConvenientMinecraft.MOD_ID, name));
