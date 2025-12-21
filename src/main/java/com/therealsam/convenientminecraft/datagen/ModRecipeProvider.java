@@ -22,12 +22,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             @Override
             public void generate() {
                 createShaped(RecipeCategory.TOOLS, ModItems.BLAZING_PICKAXE)
-                        .pattern("%#%")
-                        .pattern(" & ")
-                        .pattern(" & ")
-                        .input('#', Items.LAVA_BUCKET)
-                        .input('&', Items.STICK)
-                        .input('%', Items.IRON_INGOT)
+                        .pattern("ILI")
+                        .pattern(" S ")
+                        .pattern(" S ")
+                        .input('L', Items.LAVA_BUCKET)
+                        .input('I', Items.IRON_INGOT)
+                        .input('S', Items.STICK)
                         .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
                         .offerTo(exporter, getRecipeName(ModItems.BLAZING_PICKAXE));
             }

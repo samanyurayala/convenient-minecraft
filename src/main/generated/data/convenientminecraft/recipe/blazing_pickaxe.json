@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": "minecraft:lava_bucket",
-    "%": "minecraft:iron_ingot",
-    "&": "minecraft:stick"
+    "I": "minecraft:iron_ingot",
+    "L": "minecraft:lava_bucket",
+    "S": "minecraft:stick"
   },
   "pattern": [
-    "%#%",
-    " & ",
-    " & "
+    "ILI",
+    " S ",
+    " S "
   ],
   "result": {
     "count": 1,
