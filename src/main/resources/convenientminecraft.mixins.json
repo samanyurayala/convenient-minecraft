@@ -5,6 +5,7 @@
 	"mixins": [
 		"AnvilMixin",
         "AnvilScreenMixin",
+        "EnchantingTableMixin",
         "EnchantsMixin",
         "ItemsMixin"
 	],
