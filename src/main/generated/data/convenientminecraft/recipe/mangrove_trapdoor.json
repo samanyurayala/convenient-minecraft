@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "S": "minecraft:mangrove_planks"
+  },
+  "pattern": [
+    "   ",
+    "SSS",
+    "SSS"
+  ],
+  "result": {
+    "count": 6,
+    "id": "minecraft:mangrove_trapdoor"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "S": "minecraft:spruce_planks"
+  },
+  "pattern": [
+    "   ",
+    "SSS",
+    "SSS"
+  ],
+  "result": {
+    "count": 6,
+    "id": "minecraft:spruce_trapdoor"
+  }
+}

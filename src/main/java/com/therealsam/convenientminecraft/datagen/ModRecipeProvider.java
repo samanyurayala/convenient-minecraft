@@ -48,6 +48,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 for (int i = 0; i < VANILLA_STAIRS.length; i++) {
                     createBetterStairRecipe(VANILLA_STAIRS[i], VANILLA_STAIRS_INGREDIENTS[i], exporter);
                 }
+                final ItemConvertible[] VANILLA_TRAPDOORS = {Items.OAK_TRAPDOOR, Items.SPRUCE_TRAPDOOR, Items.BIRCH_TRAPDOOR, Items.JUNGLE_TRAPDOOR, Items.ACACIA_TRAPDOOR, Items.DARK_OAK_TRAPDOOR, Items.MANGROVE_TRAPDOOR, Items.CHERRY_TRAPDOOR, Items.PALE_OAK_TRAPDOOR, Items.BAMBOO_TRAPDOOR, Items.CRIMSON_TRAPDOOR, Items.WARPED_TRAPDOOR};
+                final ItemConvertible[] VANILLA_METAL_TRAPDOORS = {Items.IRON_TRAPDOOR, Items.COPPER_TRAPDOOR};
+                final ItemConvertible[] VANILLA_TRAPDOORS_INGREDIENTS = {Items.OAK_PLANKS, Items.SPRUCE_PLANKS, Items.BIRCH_PLANKS, Items.JUNGLE_PLANKS, Items.ACACIA_PLANKS, Items.DARK_OAK_PLANKS, Items.MANGROVE_PLANKS, Items.CHERRY_PLANKS, Items.PALE_OAK_PLANKS, Items.BAMBOO_PLANKS, Items.CRIMSON_PLANKS, Items.WARPED_PLANKS};
+                final ItemConvertible[] VANILLA_METAL_TRAPDOORS_INGREDIENTS = {Items.IRON_INGOT, Items.COPPER_INGOT};
+                for (int i = 0; i < VANILLA_TRAPDOORS.length; i++) {
+                    createBetterTrapdoorRecipe(VANILLA_TRAPDOORS[i], VANILLA_TRAPDOORS_INGREDIENTS[i], exporter);
+                }
+                for (int i = 0; i < VANILLA_METAL_TRAPDOORS.length; i++) {
+                    createBetterMetalTrapdoorRecipe(VANILLA_METAL_TRAPDOORS[i], VANILLA_METAL_TRAPDOORS_INGREDIENTS[i], exporter);
+                }
             }
 
             private void createBetterStairRecipe(ItemConvertible stair, ItemConvertible ingredient, RecipeExporter exporter) {
@@ -56,6 +66,29 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("S  ")
                         .pattern("SS ")
                         .pattern("   ")
+                        .input('S', useIngredient)
+                        .criterion(hasItem(ingredient), conditionsFromItem(ingredient))
+                        .offerTo(exporter);
+            }
+
+            private void createBetterTrapdoorRecipe(ItemConvertible trapdoor, ItemConvertible ingredient, RecipeExporter exporter) {
+                Ingredient useIngredient = Ingredient.ofItem(ingredient);
+                ShapedRecipeJsonBuilder.create(registryLookup.getOrThrow(RegistryKeys.ITEM), RecipeCategory.BUILDING_BLOCKS, trapdoor, 6)
+                        .pattern("   ")
+                        .pattern("SSS")
+                        .pattern("SSS")
+                        .input('S', useIngredient)
+                        .criterion(hasItem(ingredient), conditionsFromItem(ingredient))
+                        .offerTo(exporter);
+            }
+
+            private void createBetterMetalTrapdoorRecipe(ItemConvertible trapdoor, ItemConvertible ingredient, RecipeExporter exporter) {
+                Ingredient useIngredient = Ingredient.ofItem(ingredient);
+                RecipeCategory category = (trapdoor == Items.IRON_TRAPDOOR) ? RecipeCategory.REDSTONE : RecipeCategory.BUILDING_BLOCKS;
+                ShapedRecipeJsonBuilder.create(registryLookup.getOrThrow(RegistryKeys.ITEM), category, trapdoor, 4)
+                        .pattern("   ")
+                        .pattern("SS ")
+                        .pattern("SS ")
                         .input('S', useIngredient)
                         .criterion(hasItem(ingredient), conditionsFromItem(ingredient))
                         .offerTo(exporter);

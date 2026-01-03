@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "S": "minecraft:cherry_planks"
+  },
+  "pattern": [
+    "   ",
+    "SSS",
+    "SSS"
+  ],
+  "result": {
+    "count": 6,
+    "id": "minecraft:cherry_trapdoor"
+  }
+}
