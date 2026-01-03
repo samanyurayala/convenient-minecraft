@@ -5,8 +5,6 @@
 	"mixins": [
 		"AnvilMixin",
         "AnvilScreenMixin",
-        "EnchantingTableMixin",
-        "EnchantsMixin",
         "ItemsMixin"
 	],
 	"injectors": {
