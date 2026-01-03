@@ -25,7 +25,7 @@ import java.util.Map;
 public class EnchantingTableMixin {
     @Shadow @Final Inventory inventory;
     @Shadow @Final ScreenHandlerContext context;
-    private static final Map<BlockPos, ItemStack> lapis = new HashMap<>();
+    public static final Map<BlockPos, ItemStack> lapis = new HashMap<>();
 
     @Inject(method = "onClosed", at = @At("HEAD"), cancellable = true)
     private void keepInventory(PlayerEntity player, CallbackInfo ci) {

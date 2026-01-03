@@ -19,7 +19,7 @@ import org.jspecify.annotations.Nullable;
 public class GlassDropEvent implements PlayerBlockBreakEvents.Before{
     @Override
     public boolean beforeBlockBreak(World world, PlayerEntity playerEntity, BlockPos blockPos, BlockState blockState, @Nullable BlockEntity blockEntity) {
-        if (!world.isClient() && blockState.isIn(ModTags.Blocks.GLASSES)) {
+        if (!world.isClient() && blockState.isIn(ModTags.Blocks.GLASSES) && !playerEntity.isInCreativeMode()) {
             ItemStack shouldDrop = new ItemStack(blockState.getBlock().asItem(), 1);
             if (!shouldDrop.isEmpty()) {
                 Block.dropStack(world, blockPos, shouldDrop);
