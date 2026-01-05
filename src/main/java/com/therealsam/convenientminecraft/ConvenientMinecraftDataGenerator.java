@@ -1,9 +1,6 @@
 package com.therealsam.convenientminecraft;
 
-import com.therealsam.convenientminecraft.datagen.ModBlockTagProvider;
-import com.therealsam.convenientminecraft.datagen.ModItemTagProvider;
-import com.therealsam.convenientminecraft.datagen.ModModelProvider;
-import com.therealsam.convenientminecraft.datagen.ModRecipeProvider;
+import com.therealsam.convenientminecraft.datagen.*;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -15,5 +12,6 @@ public class ConvenientMinecraftDataGenerator implements DataGeneratorEntrypoint
         pack.addProvider(ModBlockTagProvider::new);
         pack.addProvider(ModItemTagProvider::new);
         pack.addProvider(ModRecipeProvider::new);
+        pack.addProvider(ModLootTableProvider::new);
 	}
 }

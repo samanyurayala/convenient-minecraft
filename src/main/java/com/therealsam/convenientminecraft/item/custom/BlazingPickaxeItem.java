@@ -44,7 +44,7 @@ public class BlazingPickaxeItem extends Item {
 
             world.removeBlock(pos, false);
             Block.dropStack(world, pos, new ItemStack(shouldDrop, fortuneDrop));
-
+            stack.damage(1, player, EquipmentSlot.MAINHAND);
             if (world instanceof ServerWorld server) {
                 int experienceAmount = world.random.nextInt(3) + 1;
                 ExperienceOrbEntity.spawn(server, Vec3d.ofCenter(pos), experienceAmount);
