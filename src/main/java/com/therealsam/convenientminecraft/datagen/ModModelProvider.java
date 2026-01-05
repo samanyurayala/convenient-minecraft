@@ -1,5 +1,6 @@
 package com.therealsam.convenientminecraft.datagen;
 
+import com.therealsam.convenientminecraft.block.ModBlocks;
 import com.therealsam.convenientminecraft.item.ModItems;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -14,7 +15,7 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-
+        blockStateModelGenerator.registerStraightRail(ModBlocks.COPPER_RAIL);
     }
 
     @Override

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "C": "minecraft:copper_nugget",
+    "R": "minecraft:powered_rail"
+  },
+  "pattern": [
+    "CCC",
+    "CRC",
+    "CCC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "convenientminecraft:copper_rail"
+  }
+}

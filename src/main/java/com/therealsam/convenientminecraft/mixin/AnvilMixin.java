@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(AnvilScreenHandler.class)
-public class AnvilMixin {
+public abstract class AnvilMixin {
     @ModifyConstant(method = "updateResult", constant = @Constant(intValue = 40))
     private int removeExpensive(int og) {
         return Integer.MAX_VALUE;

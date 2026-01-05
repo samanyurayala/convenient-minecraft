@@ -5,7 +5,9 @@
 	"mixins": [
 		"AnvilMixin",
         "AnvilScreenMixin",
-        "ItemsMixin"
+		"CopperRailMixin",
+        "ItemsMixin",
+		"MinecartAccessorMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -1,5 +1,6 @@
 package com.therealsam.convenientminecraft.datagen;
 
+import com.therealsam.convenientminecraft.block.ModBlocks;
 import com.therealsam.convenientminecraft.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -58,6 +59,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 for (int i = 0; i < VANILLA_METAL_TRAPDOORS.length; i++) {
                     createBetterMetalTrapdoorRecipe(VANILLA_METAL_TRAPDOORS[i], VANILLA_METAL_TRAPDOORS_INGREDIENTS[i], exporter);
                 }
+                createShaped(RecipeCategory.REDSTONE, ModBlocks.COPPER_RAIL)
+                        .pattern("CCC")
+                        .pattern("CRC")
+                        .pattern("CCC")
+                        .input('C', Items.COPPER_NUGGET)
+                        .input('R', Items.POWERED_RAIL)
+                        .criterion(hasItem(Items.POWERED_RAIL), conditionsFromItem(Items.POWERED_RAIL))
+                        .offerTo(exporter);
             }
 
             private void createBetterStairRecipe(ItemConvertible stair, ItemConvertible ingredient, RecipeExporter exporter) {

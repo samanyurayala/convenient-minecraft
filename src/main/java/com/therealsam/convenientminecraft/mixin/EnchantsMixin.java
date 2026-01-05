@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Enchantment.class)
-public class EnchantsMixin {
+public abstract class EnchantsMixin {
     @Inject(method = "canBeCombined", at = @At("HEAD"), cancellable = true)
     private static void allowBow(RegistryEntry<Enchantment> first, RegistryEntry<Enchantment> second, CallbackInfoReturnable<Boolean> cir) {
         if ((first.matchesKey(Enchantments.INFINITY) && second.matchesKey(Enchantments.MENDING)) || (first.matchesKey(Enchantments.MENDING) && second.matchesKey(Enchantments.INFINITY))) cir.setReturnValue(true);

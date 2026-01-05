@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Arrays;
 
 @Mixin(ItemStack.class)
-public class ItemsMixin {
+public abstract class ItemsMixin {
     @Inject(method = "getMaxCount", at = @At("HEAD"), cancellable = true)
     private void customStack(CallbackInfoReturnable<Integer> cir) {
         Item[] stackableItems = {Items.RABBIT_STEW, Items.BEETROOT_SOUP, Items.MUSHROOM_STEW, Items.SUSPICIOUS_STEW, Items.MILK_BUCKET, Items.ENCHANTED_BOOK};

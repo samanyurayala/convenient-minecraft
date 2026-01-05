@@ -1,5 +1,7 @@
 package com.therealsam.convenientminecraft;
 
+import com.therealsam.convenientminecraft.block.ModBlocks;
+import com.therealsam.convenientminecraft.item.ModItemGroups;
 import com.therealsam.convenientminecraft.item.ModItems;
 import com.therealsam.convenientminecraft.util.BlazingPickaxeUsageEvent;
 import com.therealsam.convenientminecraft.util.GlassDropEvent;
@@ -33,7 +35,9 @@ public class ConvenientMinecraft implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModItemGroups.registerItemGroups();
         ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
         PlayerBlockBreakEvents.BEFORE.register(new BlazingPickaxeUsageEvent());
         PlayerBlockBreakEvents.BEFORE.register(new GlassDropEvent());
         ModLootTableModifiers.modifyLootTables();

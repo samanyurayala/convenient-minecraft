@@ -1,5 +1,6 @@
 package com.therealsam.convenientminecraft.datagen;
 
+import com.therealsam.convenientminecraft.block.ModBlocks;
 import com.therealsam.convenientminecraft.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -53,5 +54,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                         Blocks.RED_STAINED_GLASS_PANE,
                         Blocks.BLACK_STAINED_GLASS,
                         Blocks.BLACK_STAINED_GLASS_PANE);
+        valueLookupBuilder(BlockTags.RAILS)
+                .add(ModBlocks.COPPER_RAIL);
     }
 }
