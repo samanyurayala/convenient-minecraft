@@ -9,11 +9,7 @@ import static net.minecraft.block.PoweredRailBlock.POWERED;
 
 public class CopperRailBlock extends PoweredRailBlock {
     public CopperRailBlock(Settings settings) {
-
         super(settings);
-
         this.setDefaultState(this.stateManager.getDefaultState().with(POWERED, false).with(SHAPE, RailShape.NORTH_SOUTH));
     }
-
-
 }

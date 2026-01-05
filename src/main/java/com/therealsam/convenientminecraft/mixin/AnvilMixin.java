@@ -15,5 +15,4 @@ public abstract class AnvilMixin {
     private int removeExpensive(int og) {
         return Integer.MAX_VALUE;
     }
-
 }
