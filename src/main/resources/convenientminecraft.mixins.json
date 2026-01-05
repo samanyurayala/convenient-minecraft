@@ -6,6 +6,7 @@
 		"AnvilMixin",
         "AnvilScreenMixin",
 		"CopperRailMixin",
+		"EnchantsMixin",
         "ItemsMixin",
 		"MinecartAccessorMixin"
 	],
